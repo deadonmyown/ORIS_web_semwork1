@@ -1,0 +1,560 @@
+body {
+    min-height: 100%;
+    height: auto;
+    position: relative;
+    color: #E9E9E9;
+    background-color: #181A21;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: normal;
+}
+
+.page_overlay {
+    visibility: hidden;
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1.0;
+    z-index: 9;
+}
+
+.page_content {
+    overflow: visible;
+}
+
+.upper_menu_hidden {
+    display: none;
+}
+
+.upper_menu {
+    height: 104px;
+}
+
+.upper_menu a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.upper_container {
+    display: flex;
+    justify-content: center;
+}
+
+.upper_container a img {
+    padding-top: 30px;
+    margin-right: 40px;
+    width: 176px;
+    height: 44px;
+}
+
+.upper_navigation a {
+    padding: 45px 3px 7px 3px;
+    font-size: 14px;
+    color: #b8b6b4;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.upper_left_menu {
+    position: absolute;
+    visibility: hidden;
+    align-self: center;
+    justify-self: flex-start;
+    left: 0;
+    width: 36px;
+    height: 31px;
+}
+
+.upper_left_menu img {
+    height: 100%;
+    width: 100%;
+}
+
+.upper_left_navigation {
+    background-color: #181A21;
+    visibility: hidden;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 280px;
+    box-shadow: 0 0 7px 0 rgb(0 0 0 / 75%);
+    z-index: 10;
+}
+
+.upper_left_minor_btns a,
+.upper_left_btns a {
+    color: #bdbdbd;
+    padding: 0 12px;
+    line-height: 2.5em;
+}
+
+.upper_left_btns,
+.upper_left_minor_btns {
+    display: flex;
+    flex-direction: column;
+}
+
+.upper_left_btns a {
+    border-top: 1px solid #2f3138;
+    border-bottom: 1px solid #000000;
+    font-size: 22px;
+}
+
+.upper_left_btns a,
+.upper_left_minor_btns a,
+.upper_left_navigation_footer a {
+    cursor: pointer;
+}
+
+.upper_left_btns a:nth-child(2),
+.upper_left_btns a:nth-child(3) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upper_left_btns a:nth-child(2) img,
+.upper_left_btns a:nth-child(3) img {
+    width: 20px;
+    height: 12px;
+}
+
+.upper_left_minor_btns a,
+.upper_left_navigation_footer {
+    color: #8a8a8a;
+}
+
+.upper_left_navigation_footer {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    padding: 0px 12px 24px 12px;
+}
+
+.upper_left_navigation_footer img {
+    width: 96px;
+    height: 26px;
+}
+
+.upper_btns {
+    display: flex;
+    margin-left: 64px;
+    height: 21px;
+    color: #b8b6b4;
+    font-size: 11px;
+    line-height: 24px;
+}
+
+.upper_btns a:first-child:first-of-type {
+    background-color: #5c7e10;
+    padding-left: 35px;
+    padding-right: 9px;
+    background-position: 10px 5px;
+    background-image: url(https://community.cloudflare.steamstatic.com/public/shared/images/header/btn_header_installsteam_download.png?v=1);
+    background-repeat: no-repeat;
+    color: #e5e4dc;
+}
+
+.upper_btns a:nth-child(2) {
+    padding: 0 4px;
+    color: #b8b6b4;
+}
+
+.upper_btns a:last-child {
+    line-height: 24px;
+    padding-left: 5px;
+    padding-right: 18px;
+    color: #b8b6b4;
+    background-image: url(data:image/gif;base64,R0lGODlhEwAMAIABAMXDwgAAACH5BAEAAAEALAAAAAATAAwAAAIUjI+py+0PEZh0wmpjjSfzD4aiUQAAOw==);
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+.center_content {
+    margin: 0px auto;
+    padding: 0px 8px;
+    width: 100%;
+    overflow-x: visible;
+    background: radial-gradient(rgba(24, 26, 33, 0) 0%, #181A21 100%) fixed no-repeat, url(https://community.cloudflare.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg) center top no-repeat, #181A21;
+}
+
+.center_container {
+    padding-top: 80px;
+    padding-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.enter_container {
+    margin: 8px 16px;
+}
+
+.enter_container p {
+    color: #fff;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: .055em;
+    font-weight: 200;
+    padding-left: 8px;
+}
+
+.login_menu {
+    display: flex;
+    background-color: #181a21;
+    border-radius: 4px;
+    padding: 24px 32px;
+    flex: 1;
+    min-width: 636px;
+}
+
+.login {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.account_name,
+.password {
+    display: grid;
+    margin: 4px 0px;
+}
+
+.account_name div,
+.password div {
+    margin: 4px 0px;
+    font-size: 12px;
+    color: #1999ff;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    user-select: none;
+}
+
+.account_name input,
+.password input {
+    border-radius: 2px;
+    color: #fff;
+    padding: 10px;
+    background-color: #32353c;
+    outline: none;
+    font-size: 15px;
+    border: 1px solid #32353c;
+}
+
+.password div {
+    color: #afafaf;
+}
+
+.remember {
+    margin: 8px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox {
+    width: 14px;
+    height: 14px;
+    padding: 3px;
+    border-radius: 2px;
+    background-color: #32353c;
+    cursor: pointer;
+}
+
+.checkbox svg {
+    width: 100%;
+    height: 100%;
+}
+
+.enter_btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 42px;
+}
+
+.remember_text {
+    color: #afafaf;
+    font-size: 12px;
+    user-select: none;
+    padding-left: 6px;
+}
+
+.enter_btn button {
+    width: 270px;
+    position: relative;
+    background: linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%);
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    padding: 12px;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: .03em;
+    cursor: pointer;
+}
+
+.enter_btn button:hover {
+    background: linear-gradient(90deg, #06BFFF 30%, #2D73FF 100%);
+}
+
+.login a {
+    color: #afafaf;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: center;
+}
+
+.login a:hover {
+    color: #c9c9c9;
+}
+
+.beta_func {
+    display: flex;
+    align-items: flex-start;
+    width: 200px;
+    flex-direction: column;
+    margin-left: 24px;
+}
+
+.beta_name {
+    color: #1999ff;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 6px 0px;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+}
+
+.QR_code {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 0px;
+}
+
+.QR_text {
+    font-size: 12px;
+    line-height: 16px;
+    color: #afafaf;
+    margin: 8px;
+}
+
+.beta_btn {
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 2px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.beta_text {
+    text-align: center;
+    text-decoration-line: underline;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    color: #afafaf;
+    padding: 12px 4px;
+    cursor: pointer;
+}
+
+.bottom_login {
+    display: flex;
+    padding-top: 48px;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    background-color: #181A21;
+}
+
+.bottom_login_left {
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom_login_left div {
+    text-align: center;
+    font-size: 14px;
+    color: #b8b6b4;
+}
+
+.bottom_login a {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.bottom_login img {
+    max-width: 200px;
+}
+
+.bottom_login_right {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: 200px;
+}
+
+.bottom_login_right a {
+    margin: 20px 0 10px 0;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+}
+
+.bottom_login_right a:hover {
+    border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.bottom_login_right span {
+    display: block;
+    text-align: center;
+    padding: 0 15px;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.bottom_login_right div {
+    font-size: 14px;
+    color: #b8b6b4;
+}
+
+.footer_content {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+    color: #8F98A0;
+    padding: 32px 0;
+    position: relative;
+    width: 958px;
+}
+
+.footerText {
+    padding: 2px 2px;
+    line-height: 14px;
+    color: #8F98A0;
+}
+
+.footer_content img {
+    align-self: flex-start;
+    width: 96px;
+    height: 26px;
+}
+
+.footerText a {
+    color: #C6D4DF;
+    text-decoration: none;
+}
+
+.valve_links {
+    margin: 15px 0 0 0;
+    display: block;
+}
+
+.footer_content a:hover,
+.upper_navigation a:hover,
+.upper_btns a:hover,
+.upper_left_navigation_footer span a:hover {
+    color: #ffffff;
+}
+
+@media screen and (max-width: 1000px) {
+    .upper_menu_hidden {
+        display: block;
+        height: 36px;
+        padding: 13px 8px;
+    }
+
+    .upper_menu {
+        background: #171a21;
+        box-shadow: 0 0 7px 0 rgb(0 0 0 / 75%);
+        height: 36px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 13px 8px;
+        z-index: 2;
+    }
+
+    .upper_container a img {
+        height: 36px;
+        padding-top: 0px;
+        margin-right: 0px;
+    }
+
+    .upper_navigation,
+    .upper_btns {
+        display: none;
+    }
+
+    .upper_left_menu {
+        visibility: visible;
+    }
+
+    .footer_content {
+        visibility: hidden;
+        width: auto;
+    }
+
+    .click_event:active .upper_left_navigation,
+    .click_event:focus .upper_left_navigation,
+    .click_event:active .page_overlay,
+    .click_event:focus .page_overlay {
+        visibility: visible;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .center_content {
+        background: radial-gradient(rgba(24, 26, 33, 0) 0%, #181A21 100%) fixed no-repeat, url(https://community.cloudflare.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask_mobile.jpg) center top no-repeat, #181A21;
+    }
+
+    .center_container {
+        padding-top: 0px;
+        padding-bottom: 20px;
+    }
+
+    .enter_container {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .enter_container p {
+        text-align: center;
+    }
+
+    .login_menu {
+        flex-direction: column;
+        background: none;
+        min-width: 0;
+    }
+
+    .beta_func {
+        margin-top: 48px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .QR_code svg {
+        display: none;
+    }
+
+    .bottom_login {
+        flex-direction: column-reverse;
+    }
+}
