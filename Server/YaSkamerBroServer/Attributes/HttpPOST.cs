@@ -1,11 +1,10 @@
-﻿namespace YaSkamerBroServer;
+﻿namespace GameServer;
 
-public class HttpPOST: Attribute
+public class HttpPOST: HttpMethodAttribute
 {
-    public string MethodURI;
-
-    public HttpPOST(string methodURI)
+    public HttpPOST(string methodUri) : base(HttpMethod.Post, methodUri)
     {
-        MethodURI = methodURI;
     }
+    
+    public HttpPOST() : this("") {}
 }

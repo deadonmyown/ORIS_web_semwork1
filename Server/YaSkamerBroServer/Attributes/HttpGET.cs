@@ -1,11 +1,10 @@
-﻿namespace YaSkamerBroServer;
+﻿namespace GameServer;
 
-public class HttpGET: Attribute
+public class HttpGET: HttpMethodAttribute
 {
-    public string MethodURI;
-
-    public HttpGET(string methodURI)
+    public HttpGET(string methodUri) : base(HttpMethod.Get, methodUri)
     {
-        MethodURI = methodURI;
     }
+    
+    public HttpGET() : this("") {}
 }

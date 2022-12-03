@@ -1,4 +1,4 @@
-﻿namespace YaSkamerBroServer;
+﻿namespace GameServer;
 
 public enum ServerStatus
 {

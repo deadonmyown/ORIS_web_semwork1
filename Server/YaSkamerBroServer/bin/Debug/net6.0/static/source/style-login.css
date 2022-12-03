@@ -1,0 +1,249 @@
+@font-face {
+    font-family: 'PixelArt';
+    src: url('Chava.ttf');
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    color: #E9E9E9;
+    background: radial-gradient(rgba(24, 26, 33, 0) 0%, #181A21 100%), linear-gradient(rgba(255, 170, 127, 1) 0%, rgba(127, 127, 127, 1) 45%, rgba(85, 85, 85, 1) 57%, rgba(42, 42, 42, 1) 74%, rgba(42, 42, 42, 1) 100%);
+    font-family: "PixelArt";
+    font-weight: normal;
+    margin: 0px;
+}
+
+.page_content {
+    overflow: visible;
+    height: 100%;
+}
+
+.upper_menu {
+    position: fixed;
+    z-index: 10;
+    background-color: #2c1515;
+    box-shadow: 0 0 7px 0 rgb(0 0 0 / 75%);
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+}
+
+.upper_menu a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.upper_container {
+    display: flex;
+    justify-content: center;
+}
+
+.upper_container a img {
+    padding-top: 10px;
+    margin-right: 40px;
+    max-width: 40px;
+}
+
+.upper_navigation a {
+    padding: 28px 7px 7px 7px;
+    font-size: 14px;
+    color: #b8b6b4;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.upper_auth {
+    margin: 0px 32px;
+    position: absolute;
+    right: 0;
+    padding: 28px 3px 7px 3px;
+    font-size: 14px;
+    color: #b8b6b4;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.upper_auth a {
+    color: #b8b6b4;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.center_content {
+    position: relative;
+    margin: 0;
+    padding: 0px 8px;
+    max-width: 2305px;
+    max-height: 1080px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient(rgba(24, 26, 33, 0) 0%, #181A21 100%) fixed no-repeat, url(web_game_account.png) center top no-repeat, linear-gradient(rgba(255, 170, 127, 1) 0%, rgba(127, 127, 127, 1) 45%, rgba(85, 85, 85, 1) 57%, rgba(42, 42, 42, 1) 74%, rgba(42, 42, 42, 1) 100%);
+}
+
+.center_container {
+    position: relative;
+    margin: auto;
+    min-width: 547px;
+    min-height: 329px;
+    padding-top: 100px;
+    padding-bottom: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(/log\ in.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.account_name,
+.account_password,
+.remember {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 4px 0px;
+    top: 65px;
+}
+
+.account_name div,
+.account_password div {
+    margin: 4px 0px;
+    font-size: 18px;
+    color: #fee8dd;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    user-select: none;
+}
+
+.account_name input,
+.account_password input {
+    border-radius: 2px;
+    color: #d45500;
+    padding: 10px;
+    background-color: #fabea0;
+    outline: none;
+    font-size: 15px;
+    border: 2px solid #160a04;
+    font-family: "PixelArt";
+}
+
+.enter_btn {
+    position: relative;
+    top: 68px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.enter_btn button {
+    position: relative;
+    width: 135px;
+    height: 51px;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+}
+
+.enter_btn button:hover {
+    background: url(shadow_overlap.png)
+}
+
+.upper_navigation a:hover,
+.upper_auth a:hover {
+    color: #ffffff;
+}
+
+.remember {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox {
+    position: relative;
+    display: block;
+}
+
+.checkbox input[type="checkbox"] {
+    width: auto;
+    opacity: 0.00000001;
+    position: absolute;
+    left: 0;
+    margin-left: -20px;
+}
+.checkbox label {
+    position: relative;
+}
+.checkbox label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 4px;
+    width: 22px;
+    height: 22px;
+    transition: transform 0.28s ease;
+    border-radius: 3px;
+    border: 2px solid #160a04;
+}
+.checkbox label:after {
+  content: '';
+    display: block;
+    width: 10px;
+    height: 5px;
+    border-bottom: 2px solid #160a04;
+    border-left: 2px solid #160a04;
+    -webkit-transform: rotate(-45deg) scale(0);
+    transform: rotate(-45deg) scale(0);
+    transition: transform ease 0.25s;
+    will-change: transform;
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+.checkbox input[type="checkbox"]:checked ~ label::before {
+    color: #160a04;
+}
+
+.checkbox input[type="checkbox"]:checked ~ label::after {
+    -webkit-transform: rotate(-45deg) scale(1);
+    transform: rotate(-45deg) scale(1);
+}
+
+.checkbox label {
+    min-height: 34px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding-left: 40px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+    vertical-align: sub;
+}
+
+.checkbox input[type="checkbox"]:focus + label::before {
+    outline: 0;
+}
+
+.remember_text {
+    color: #fee8dd;
+    font-size: 12px;
+    user-select: none;
+    padding-left: 6px;
+}
+
+.upper_navigation a:hover,
+.upper_auth a:hover {
+    color: #ffffff;
+}

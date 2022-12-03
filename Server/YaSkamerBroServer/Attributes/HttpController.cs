@@ -1,4 +1,4 @@
-﻿namespace YaSkamerBroServer;
+﻿namespace GameServer;
 
 public class HttpController: Attribute
 {
@@ -8,4 +8,6 @@ public class HttpController: Attribute
     {
         ControllerName = controllerName;
     }
+
+    public HttpController() : this(null) {}
 }

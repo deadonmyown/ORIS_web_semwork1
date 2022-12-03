@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8" />
+    <link rel="icon" href="source/pngegg.png">
+    <link rel="stylesheet" href="source/style-account.css">
+    <title>Аккаунт</title>
+</head>
+
+<body>
+    <div class="page_content">
+        <div class="upper_menu">
+            <div class="upper_container">
+                <div>
+                    <a href="/">
+                        <img src="source/game_logo.png">
+                    </a>
+                </div>
+                <div class="upper_navigation">
+                    <a href="/">ИГРА</a>
+                    <a href="/leaderboard/">ТАБЛИЦА ЛИДЕРОВ</a>
+                    <a href="/updates/">ОБНОВЛЕНИЯ</a>
+                </div>
+                <div class="upper_auth">
+                    {{ if account }}
+                    <a href="/accounts/profile/">{{ account.name }}</a>
+                    /
+                    <a href="/accounts/quit/">ВЫЙТИ</a>
+                    {{ else }}
+                    <a href="/accounts/auth/login/">ВОЙТИ</a>
+                    /
+                    <a href="/accounts/auth/signup/">РЕГИСТРАЦИЯ</a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        <div class="center_content">
+            <form class="center_container" method="post">
+                <div class="account_header">
+                    Настройки аккаунта
+                </div>
+                <div class="account_name">
+                    <div>
+                        Имя аккаунта
+                        <input type="text" name="Name" value="{{ account.name }}">
+                    </div>
+                </div>
+                <div class="account_email">
+                    <div>
+                        Почта
+                        <input type="text" name="Email" value="{{ account.email}}">
+                    </div>
+                </div>
+                <div class="account_phone">
+                    <div>
+                        Номер телефона
+                        <input type="text" name="Phone" value="{{ account.phone}}">
+                    </div>
+                </div>
+                <div class="account_password">
+                    <div>
+                        Пароль
+                        <input type="text" name="Password" value="{{ account.password}}">
+                    </div>
+                </div>
+                <div class="btns">
+                    <div class="enter_btn">
+                        <button id="save_button" type="submit">Сохранить</button>
+                    </div>
+                    <div class="cancel_btn">
+                        <button type="reset" name="Cancel">Отмена</button>
+                    </div>
+                </div>
+                </form>
+        </div>
+    </div>
+</body>
+
+<!--
+<script>
+    document.getElementById('save_button').onclick=async function(ev){
+        ev.stopPropagation();
+        await fetch("http://localhost:1337/accounts/profile", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+    };
+</script>-->
