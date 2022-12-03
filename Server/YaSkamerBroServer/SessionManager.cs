@@ -12,13 +12,13 @@ namespace GameServer
 
         private static readonly MemoryCache _memoryCache = new MemoryCache(new MemoryCacheOptions());
 
-        public static Session CreateOrGetSession(object key, Func<Session> createSession)
+        public static Session CreateOrGetSession(object key, Func<Session> createSession, string rememberMe)
         {
             Session session;
             if (!_memoryCache.TryGetValue(key, out session))
             {
                 session = createSession();
-                var memoryCacheOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromDays(14));
+                var memoryCacheOptions = new MemoryCacheEntryOptions().SetSlidingExpiration(rememberMe == "on" ? TimeSpan.FromDays(30) : TimeSpan.FromDays(14));
                 _memoryCache.Set(key, session, memoryCacheOptions);
             }
             Console.WriteLine(_memoryCache.TryGetValue(key, out Session test));
