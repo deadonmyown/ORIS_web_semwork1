@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8" />
+    <link rel="icon" href="source/pngegg.png">
+    <link rel="stylesheet" href="source/style-edit.css">
+    <title>Таблица лидеров</title>
+</head>
+
+<body>
+    <div class="page_content">
+        <div class="upper_menu">
+            <div class="upper_container">
+                <div>
+                    <a href="/">
+                        <img src="source/game_logo.png">
+                    </a>
+                </div>
+                <div class="upper_navigation">
+                    <a href="/">ИГРА</a>
+                    <a href="/leaderboard/">ТАБЛИЦА ЛИДЕРОВ</a>
+                    <a href="/updates/">ОБНОВЛЕНИЯ</a>
+                </div>
+                <div class="upper_auth">
+                    {{ if account }}
+                    <a href="/accounts/profile/">{{ account.name }}</a>
+                    /
+                    <a href="/accounts/quit/">ВЫЙТИ</a>
+                    {{ else }}
+                    <a href="/accounts/auth/login/">ВОЙТИ</a>
+                    /
+                    <a href="/accounts/auth/signup/">РЕГИСТРАЦИЯ</a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        <form class="center_content" method="post">
+            <div class="text_content">
+                <textarea type="text" rows="5" cols="30" name="Content" >{{ updatecontent.content }}</textarea>
+            </div>
+            <div class="btn_edit">
+                <button>применить</button>
+            </form>
+        </div>
+    </div>
+</body>

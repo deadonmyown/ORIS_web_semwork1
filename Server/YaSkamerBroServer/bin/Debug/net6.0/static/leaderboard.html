@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8" />
+    <link rel="icon" href="source/pngegg.png">
+    <link rel="stylesheet" href="source/style-leaderboard.css">
+    <title>Таблица лидеров</title>
+</head>
+
+<body>
+    <div class="page_content">
+        <div class="upper_menu">
+            <div class="upper_container">
+                <div>
+                    <a href="/">
+                        <img src="source/game_logo.png">
+                    </a>
+                </div>
+                <div class="upper_navigation">
+                    <a href="/">ИГРА</a>
+                    <a href="/leaderboard/">ТАБЛИЦА ЛИДЕРОВ</a>
+                    <a href="/updates/">ОБНОВЛЕНИЯ</a>
+                </div>
+                <div class="upper_auth">
+                    {{ if account }}
+                    <a href="/accounts/profile/">{{ account.name }}</a>
+                    /
+                    <a href="/accounts/quit/">ВЫЙТИ</a>
+                    {{ else }}
+                    <a href="/accounts/auth/login/">ВОЙТИ</a>
+                    /
+                    <a href="/accounts/auth/signup/">РЕГИСТРАЦИЯ</a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        <div class="center_content">
+            <div class="game_leaderboard">
+                <div class="leaderboard_table">
+                    <table class="table_users">
+                        <thead class="table_header">
+                            <tr>
+                                <td class="text_center">Место</td>
+                                <td class="text_center">Игрок</td>
+                                <td class="text_center">Время</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{- for leader in leaderboard }}
+                            <tr>
+                                <td class="text_center">{{ leader.place }}</td>
+                                <td class="text_center">{{ leader.name }}</td>
+                                <td class="text_center">{{ leader.best_time }}</td>
+                            </tr>
+                            {{- end }}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <form class="btn_add_user">
+                <button>+</button>
+            </form>
+        </div>
+    </div>
+</body>
