@@ -112,7 +112,7 @@ public class AccountsController: Controller
                 (login, password, remember) = (parsedBody[0], parsedBody[1], parsedBody[2]);
             else if (parsedBody.Length == 2)
             {
-                (login, password) = (parsedBody[0], parsedBody[1]);
+                (login, password, remember) = (parsedBody[0], parsedBody[1], "off");
             }
         }
 
@@ -121,7 +121,6 @@ public class AccountsController: Controller
 
         Console.WriteLine(body + "  " + login + "  " + password);
 
-        Console.WriteLine($"Check this method: login: {login} password: {password}");
         var dao = new AccountDao(
             @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=GameServerDB;Integrated Security=True;");
         var account = dao.Select().FirstOrDefault(acc => acc.Name == login && acc.Password == password);
@@ -130,7 +129,7 @@ public class AccountsController: Controller
             var guid = Guid.NewGuid();
             var session = new Session(guid, account.Id, account.Email, DateTime.Now);
 
-            SessionManager.CreateOrGetSession(guid, () => session);
+            SessionManager.CreateOrGetSession(guid, () => session, remember);
             SessionManager.CheckSession(guid);
             
             HttpContext.Response.AppendHeader("Set-Cookie", $"SessionId={session.Id}; path=/");
@@ -150,7 +149,7 @@ public class AccountsController: Controller
         var guid = Guid.NewGuid();
         var session = new Session(guid, account.Id, account.Email, DateTime.Now);
 
-        SessionManager.CreateOrGetSession(guid, () => session);
+        SessionManager.CreateOrGetSession(guid, () => session, "off");
         SessionManager.CheckSession(guid);
 
         HttpContext.Response.AppendHeader("Set-Cookie", $"SessionId={session.Id}; path=/");
